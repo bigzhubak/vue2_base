@@ -1,10 +1,18 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 var path = require('path')
 
+var filename = ''
+try {
+  filename = require(process.cwd() + '/filename')
+} catch (err) {
+  filename = 'index'
+}
+
 module.exports = {
   build: {
     env: require('./prod.env'),
-    index: path.resolve(process.cwd(), './dist/index.html'),
+    // index: path.resolve(process.cwd(), './dist/login.html'),
+    index: path.resolve(process.cwd(), './dist/' + filename + '.html'),
     assetsRoot: path.resolve(process.cwd(), './dist'),
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
