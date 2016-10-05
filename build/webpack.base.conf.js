@@ -1,6 +1,7 @@
 var path = require('path')
 var config = require('../config')
 var utils = require('./utils')
+var externals = require('./externals')
 var projectRoot = path.resolve(process.cwd(), '../')
 
 module.exports = {
@@ -83,5 +84,6 @@ module.exports = {
         browsers: ['last 2 versions']
       })
     ]
-  }
+  },
+  externals: externals
 }

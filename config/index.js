@@ -11,7 +11,6 @@ try {
 module.exports = {
   build: {
     env: require('./prod.env'),
-    // index: path.resolve(process.cwd(), './dist/login.html'),
     index: path.resolve(process.cwd(), './dist/' + filename + '.html'),
     assetsRoot: path.resolve(process.cwd(), './dist'),
     assetsSubDirectory: 'static',
