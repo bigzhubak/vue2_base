@@ -1,17 +1,17 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 var path = require('path')
 
-var filename = ''
+var my_config = {}
 try {
-  filename = require(process.cwd() + '/filename')
+  my_config = require(process.cwd() + '/config.js')
 } catch (err) {
-  filename = 'index'
+  my_config.filename = 'index'
 }
 
 module.exports = {
   build: {
     env: require('./prod.env'),
-    index: path.resolve(process.cwd(), './dist/' + filename + '.html'),
+    index: path.resolve(process.cwd(), './dist/' + my_config.filename + '.html'),
     assetsRoot: path.resolve(process.cwd(), './dist'),
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
