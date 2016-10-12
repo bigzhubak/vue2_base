@@ -8,6 +8,12 @@ try {
   my_config.filename = 'index'
 }
 
+var my_proxy = {}
+try {
+  my_proxy = require(process.cwd() + '/proxy.js')
+} catch (err) {
+}
+
 module.exports = {
   build: {
     env: require('./prod.env'),
@@ -28,12 +34,7 @@ module.exports = {
     port: 8080,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {
-      '/api_': {
-        target: 'https://follow.center',
-        changeOrigin: true
-      }
-    },
+    proxyTable: my_proxy,
     // CSS Sourcemaps off by default because relative paths are "buggy"
     // with this option, according to the CSS-Loader README
     // (https://github.com/webpack/css-loader#sourcemaps)
