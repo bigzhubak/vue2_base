@@ -3,7 +3,7 @@ module.exports = {
   jquery: 'jQuery',
   vue: 'Vue',
   lodash: '_',
-  'whatwg-fetch': 'fetch',
+  'fetch': 'fetch',
   toastr: 'toastr',
   autolinker: 'Autolinker',
   'vuex': 'Vuex',
