@@ -9,8 +9,19 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 Object.keys(baseWebpackConfig.entry).forEach(function (name) {
   baseWebpackConfig.entry[name] = ['./build/dev-client'].concat(baseWebpackConfig.entry[name])
 })
+// 可以配置 dev 的 entry,给 bz components 用
+var my_config = {}
+try {
+  my_config = require(process.cwd() + '/config.js')
+} catch (err) {
+  my_config.entry = baseWebpackConfig.entry
+}
+if (!my_config.entry) {
+  my_config.entry = baseWebpackConfig.entry
+}
 
 module.exports = merge(baseWebpackConfig, {
+  entry: my_config.entry,
   module: {
     loaders: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap })
   },
