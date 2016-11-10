@@ -8,5 +8,7 @@ module.exports = {
   autolinker: 'Autolinker',
   'vuex': 'Vuex',
   'vue-router': 'VueRouter',
-  'vue-resource': 'VueResource'
+  'vue-resource': 'VueResource',
+  'Simditor': 'Simditor',
+  'simditor': 'Simditor'
 }

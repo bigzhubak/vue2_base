@@ -21,6 +21,7 @@ if (!my_config.entry) {
 }
 
 module.exports = merge(baseWebpackConfig, {
+  externals: {},
   entry: my_config.entry,
   module: {
     loaders: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap })
