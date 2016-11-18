@@ -21,7 +21,7 @@ if (!my_config.entry) {
 }
 
 module.exports = merge(baseWebpackConfig, {
-  externals: {},
+  externals: {'vue-router': 'VueRouter'},
   entry: my_config.entry,
   module: {
     loaders: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap })
