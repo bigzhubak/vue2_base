@@ -19,9 +19,7 @@ try {
 if (!my_config.entry) {
   my_config.entry = baseWebpackConfig.entry
 }
-
-module.exports = merge(baseWebpackConfig, {
-  externals: {'vue-router': 'VueRouter'},
+var dev_config = merge(baseWebpackConfig, {
   entry: my_config.entry,
   module: {
     loaders: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap })
@@ -44,3 +42,5 @@ module.exports = merge(baseWebpackConfig, {
     })
   ]
 })
+dev_config.externals = {'vue-router': 'VueRouter'}
+module.exports = dev_config
