@@ -42,5 +42,5 @@ var dev_config = merge(baseWebpackConfig, {
     })
   ]
 })
-dev_config.externals = {'vue-router': 'VueRouter'}
+dev_config.externals = {vue: 'Vue', 'vue-router': 'VueRouter', 'jquery': 'jQuery'}
 module.exports = dev_config
