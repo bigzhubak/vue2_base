@@ -10,5 +10,6 @@ module.exports = {
   'vue-router': 'VueRouter',
   'vue-resource': 'VueResource',
   'Simditor': 'Simditor',
-  'simditor': 'Simditor'
+  'simditor': 'Simditor',
+  'mark.js': 'mark.js'
 }
