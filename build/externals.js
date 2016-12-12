@@ -11,5 +11,5 @@ module.exports = {
   'vue-resource': 'VueResource',
   'Simditor': 'Simditor',
   'simditor': 'Simditor',
-  'mark.js': 'mark.js'
+  'mark.js': 'Mark'
 }
