@@ -18,6 +18,7 @@ module.exports = {
     fallback: [path.join(__dirname, '../node_modules')],
     alias: {
       // 'vue': 'vue/dist/vue.common.js',
+      'bz-lib': path.resolve(__dirname, '../../bz-lib'),
       'vue': 'vue/dist/vue.js',
       'src': path.resolve(__dirname, '../src'),
       'assets': path.resolve(__dirname, '../src/assets'),
