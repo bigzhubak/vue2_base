@@ -13,8 +13,10 @@
     "build:server": "cross-env NODE_ENV=production webpack --config build/webpack.server.config.js --progress --hide-modules"
   },
   "dependencies": {
+    "bz-doc": "^2.3.2",
     "extract-text-webpack-plugin": "^1.0.1",
     "json-loader": "^0.5.4",
+    "toastr": "^2.1.2",
     "vue": "^2.1.7",
     "vue-template-compiler": "^2.1.7",
     "webpack": "^1.13.3",
