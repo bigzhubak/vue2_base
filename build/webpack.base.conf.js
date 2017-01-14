@@ -3,6 +3,22 @@ var config = require('../config')
 var utils = require('./utils')
 var externals = require('./externals')
 var projectRoot = path.resolve(process.cwd(), '../')
+var alias = {
+  // 'vue': 'vue/dist/vue.common.js',
+  'bz-lib': path.resolve(__dirname, '../../bz-lib'),
+  'vue': 'vue/dist/vue.js',
+  'src': path.resolve(__dirname, '../src'),
+  'assets': path.resolve(__dirname, '../src/assets'),
+  'components': path.resolve(__dirname, '../src/components')
+}
+
+// 自已配置的 alias
+var alias_bz = {}
+try {
+  alias_bz = require(process.cwd() + '/alias.js')
+} catch (err) {
+}
+alias = Object.assign(alias, alias_bz)
 
 module.exports = {
   entry: {
@@ -16,14 +32,7 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.vue'],
     fallback: [path.join(__dirname, '../node_modules')],
-    alias: {
-      // 'vue': 'vue/dist/vue.common.js',
-      'bz-lib': path.resolve(__dirname, '../../bz-lib'),
-      'vue': 'vue/dist/vue.js',
-      'src': path.resolve(__dirname, '../src'),
-      'assets': path.resolve(__dirname, '../src/assets'),
-      'components': path.resolve(__dirname, '../src/components')
-    }
+    alias: alias
   },
   resolveLoader: {
     fallback: [path.join(__dirname, '../node_modules')]
