@@ -1,11 +1,11 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 var path = require('path')
 
-var my_config = {}
+var config = {}
 try {
-  my_config = require(process.cwd() + '/config.js')
+  config = require(process.cwd() + '/config.js')
 } catch (err) {
-  my_config.filename = 'index'
+  config.filename = 'index'
 }
 
 var my_proxy = {}
@@ -17,7 +17,7 @@ try {
 module.exports = {
   build: {
     env: require('./prod.env'),
-    index: path.resolve(process.cwd(), './dist/' + my_config.filename + '.html'),
+    index: path.resolve(process.cwd(), './dist/' + config.filename + '.html'),
     assetsRoot: path.resolve(process.cwd(), './dist'),
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
@@ -31,7 +31,7 @@ module.exports = {
   },
   dev: {
     env: require('./dev.env'),
-    port: 8080,
+    port: config.port || 8080,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: my_proxy,
